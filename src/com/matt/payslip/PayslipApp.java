@@ -2,7 +2,7 @@ package com.matt.payslip;
 
 public class PayslipApp {
 
-    private String firstName;
+    public String firstName;
     private String surname;
     private int annualSalary;
     private int superRate;
@@ -12,7 +12,7 @@ public class PayslipApp {
     public static void main(String[] args) {
 
         System.out.println("Welcome to the payslip generator!");
-        
+        System.out.println();
 
     }
 
