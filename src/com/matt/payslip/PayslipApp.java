@@ -35,6 +35,9 @@ public class PayslipApp {
         int grossIncome = taxCalculator.calculateGrossIncome(annualSalary);
         System.out.println("Gross Income: " + grossIncome);
 
+        int incomeTax = taxCalculator.calculateIncomeTax(annualSalary);
+        System.out.println("Income tax: " + incomeTax);
+
 
     }
 
