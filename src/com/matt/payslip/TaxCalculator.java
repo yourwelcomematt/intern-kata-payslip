@@ -2,13 +2,10 @@ package com.matt.payslip;
 
 public class TaxCalculator {
 
-    private int annualSalary;
-    private int superRate;
+    public int calculateGrossIncome(double annualSalary) {
 
-    public TaxCalculator(int annualSalary, int superRate) {
-
-        this.annualSalary = annualSalary;
-        this.superRate = superRate;
+        double grossIncome = annualSalary / 12.0;
+        return (int) Math.round(grossIncome);
 
     }
 

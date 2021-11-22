@@ -18,10 +18,10 @@ public class PayslipApp {
         String surname = keyboardInput.nextLine();
 
         System.out.print("Please enter your annual salary: ");
-        int annualSalary = keyboardInput.nextInt();
+        double annualSalary = keyboardInput.nextDouble();
 
         System.out.print("Please enter your super rate: ");
-        int superRate = keyboardInput.nextInt();
+        double superRate = keyboardInput.nextDouble();
 
         System.out.print("Please enter your payment start date: ");
         keyboardInput.nextLine();
@@ -29,6 +29,12 @@ public class PayslipApp {
 
         System.out.print("Please enter your payment end date: ");
         String paymentEndDate = keyboardInput.nextLine();
+
+        TaxCalculator taxCalculator = new TaxCalculator();
+
+        int grossIncome = taxCalculator.calculateGrossIncome(annualSalary);
+        System.out.println("Gross Income: " + grossIncome);
+
 
     }
 
