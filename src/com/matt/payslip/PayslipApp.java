@@ -11,17 +11,17 @@ public class PayslipApp {
         System.out.println("Welcome to the payslip generator!");
         System.out.println();
 
-        System.out.print("Please input your name: ");
+        System.out.print("Please input your first name: ");
         String firstName = keyboardInput.nextLine();
 
         System.out.print("Please input your surname: ");
         String surname = keyboardInput.nextLine();
 
         System.out.print("Please enter your annual salary: ");
-        double annualSalary = keyboardInput.nextDouble();
+        int annualSalary = keyboardInput.nextInt();
 
         System.out.print("Please enter your super rate: ");
-        double superRate = keyboardInput.nextDouble();
+        int superRate = keyboardInput.nextInt();
 
         System.out.print("Please enter your payment start date: ");
         keyboardInput.nextLine();
@@ -30,11 +30,12 @@ public class PayslipApp {
         System.out.print("Please enter your payment end date: ");
         String paymentEndDate = keyboardInput.nextLine();
 
-        TaxCalculator taxCalculator = new TaxCalculator();
+        Calculator calculator = new Calculator();
 
-        int grossIncome = taxCalculator.calculateGrossIncome(annualSalary);
-        int incomeTax = taxCalculator.calculateIncomeTax(annualSalary);
+        int grossIncome = calculator.calculateGrossIncome(annualSalary);
+        int incomeTax = calculator.calculateIncomeTax(annualSalary);
         int netIncome = grossIncome - incomeTax;
+        int superAmount = calculator.calculateSuperAmount(grossIncome, superRate);
 
         System.out.println();
         System.out.println("Your payslip has been generated:");
@@ -43,6 +44,7 @@ public class PayslipApp {
         System.out.println("Gross Income: " + grossIncome);
         System.out.println("Income tax: " + incomeTax);
         System.out.println("Net Income: " + netIncome);
+        System.out.println("Super: " + superAmount);
         System.out.println();
         System.out.println("Thank you for using MYOB!");
 
