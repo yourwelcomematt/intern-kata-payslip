@@ -33,11 +33,18 @@ public class PayslipApp {
         TaxCalculator taxCalculator = new TaxCalculator();
 
         int grossIncome = taxCalculator.calculateGrossIncome(annualSalary);
-        System.out.println("Gross Income: " + grossIncome);
-
         int incomeTax = taxCalculator.calculateIncomeTax(annualSalary);
-        System.out.println("Income tax: " + incomeTax);
+        int netIncome = grossIncome - incomeTax;
 
+        System.out.println();
+        System.out.println("Your payslip has been generated:");
+        System.out.println();
+        System.out.println("Name: " + firstName + " " + surname);
+        System.out.println("Gross Income: " + grossIncome);
+        System.out.println("Income tax: " + incomeTax);
+        System.out.println("Net Income: " + netIncome);
+        System.out.println();
+        System.out.println("Thank you for using MYOB!");
 
     }
 
