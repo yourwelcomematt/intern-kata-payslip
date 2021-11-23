@@ -4,9 +4,12 @@ import java.util.Scanner;
 
 public class PayslipApp {
 
-    private static Scanner keyboardInput = new Scanner(System.in);
+    private static final Scanner keyboardInput = new Scanner(System.in);
 
     public static void main(String[] args) {
+
+        PayPeriodGenerator payPeriodGenerator = new PayPeriodGenerator();
+        Calculator calculator = new Calculator();
 
         System.out.println("Welcome to the payslip generator!");
         System.out.println();
@@ -26,12 +29,13 @@ public class PayslipApp {
         System.out.print("Please enter your payment start date: ");
         keyboardInput.nextLine();
         String paymentStartDate = keyboardInput.nextLine();
+//        boolean validDate = payPeriodGenerator.validatePayPeriod(paymentStartDate);
 
         System.out.print("Please enter your payment end date: ");
         String paymentEndDate = keyboardInput.nextLine();
+//        boolean isValid= payPeriodGenerator.validatePayPeriod(paymentEndDate);
 
-        Calculator calculator = new Calculator();
-
+        String payPeriodString = payPeriodGenerator.generatePayPeriod(paymentStartDate, paymentEndDate);
         int grossIncome = calculator.calculateGrossIncome(annualSalary);
         int incomeTax = calculator.calculateIncomeTax(annualSalary);
         int netIncome = grossIncome - incomeTax;
@@ -41,6 +45,7 @@ public class PayslipApp {
         System.out.println("Your payslip has been generated:");
         System.out.println();
         System.out.println("Name: " + firstName + " " + surname);
+        System.out.println("Pay Period: " + payPeriodString);
         System.out.println("Gross Income: " + grossIncome);
         System.out.println("Income tax: " + incomeTax);
         System.out.println("Net Income: " + netIncome);
