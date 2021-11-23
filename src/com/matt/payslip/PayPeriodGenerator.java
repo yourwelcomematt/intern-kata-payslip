@@ -37,43 +37,43 @@ public class PayPeriodGenerator {
         String startMonth = startDate.substring(startDateSpaceIndex + 1);
         String endMonth = endDate.substring(endDateSpaceIndex + 1);
 
-        if (startMonth.equals("January") && startDay == 1 && endMonth.equals("January") && endDay == 31) {
+        if (startMonth.equalsIgnoreCase("January") && startDay == 1 && endMonth.equalsIgnoreCase("January") && endDay == 31) {
             return "01 January - 31 January";
         }
-        else if (startMonth.equals("February") && startDay == 1 && endMonth.equals("February") && endDay == 28) {
+        else if (startMonth.equalsIgnoreCase("February") && startDay == 1 && endMonth.equalsIgnoreCase("February") && endDay == 28) {
             return "01 February - 28 February";
         }
-        else if (startMonth.equals("February") && startDay == 1 && endMonth.equals("February") && endDay == 29) {
+        else if (startMonth.equalsIgnoreCase("February") && startDay == 1 && endMonth.equalsIgnoreCase("February") && endDay == 29) {
             return "01 February - 29 February";
         }
-        else if (startMonth.equals("March") && startDay == 1 && endMonth.equals("March") && endDay == 31) {
+        else if (startMonth.equalsIgnoreCase("March") && startDay == 1 && endMonth.equalsIgnoreCase("March") && endDay == 31) {
             return "01 March - 31 March";
         }
-        else if (startMonth.equals("April") && startDay == 1 && endMonth.equals("April") && endDay == 30) {
+        else if (startMonth.equalsIgnoreCase("April") && startDay == 1 && endMonth.equalsIgnoreCase("April") && endDay == 30) {
             return "01 April - 30 April";
         }
-        else if (startMonth.equals("May") && startDay == 1 && endMonth.equals("May") && endDay == 31) {
+        else if (startMonth.equalsIgnoreCase("May") && startDay == 1 && endMonth.equalsIgnoreCase("May") && endDay == 31) {
             return "01 May - 31 May";
         }
-        else if (startMonth.equals("June") && startDay == 1 && endMonth.equals("June") && endDay == 30) {
+        else if (startMonth.equalsIgnoreCase("June") && startDay == 1 && endMonth.equalsIgnoreCase("June") && endDay == 30) {
             return "01 June - 30 June";
         }
-        else if (startMonth.equals("July") && startDay == 1 && endMonth.equals("July") && endDay == 31) {
+        else if (startMonth.equalsIgnoreCase("July") && startDay == 1 && endMonth.equalsIgnoreCase("July") && endDay == 31) {
             return "01 July - 31 July";
         }
-        else if (startMonth.equals("August") && startDay == 1 && endMonth.equals("August") && endDay == 31) {
+        else if (startMonth.equalsIgnoreCase("August") && startDay == 1 && endMonth.equalsIgnoreCase("August") && endDay == 31) {
             return "01 August - 31 August";
         }
-        else if (startMonth.equals("September") && startDay == 1 && endMonth.equals("September") && endDay == 30) {
+        else if (startMonth.equalsIgnoreCase("September") && startDay == 1 && endMonth.equalsIgnoreCase("September") && endDay == 30) {
             return "01 September - 30 September";
         }
-        else if (startMonth.equals("October") && startDay == 1 && endMonth.equals("October") && endDay == 31) {
+        else if (startMonth.equalsIgnoreCase("October") && startDay == 1 && endMonth.equalsIgnoreCase("October") && endDay == 31) {
             return "01 October - 31 October";
         }
-        else if (startMonth.equals("November") && startDay == 1 && endMonth.equals("November") && endDay == 30) {
+        else if (startMonth.equalsIgnoreCase("November") && startDay == 1 && endMonth.equalsIgnoreCase("November") && endDay == 30) {
             return "01 November - 31 November";
         }
-        else if (startMonth.equals("December") && startDay == 1 && endMonth.equals("December") && endDay == 31) {
+        else if (startMonth.equalsIgnoreCase("December") && startDay == 1 && endMonth.equalsIgnoreCase("December") && endDay == 31) {
             return "01 December - 31 December";
         }
         else {

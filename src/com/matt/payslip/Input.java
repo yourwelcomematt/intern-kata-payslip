@@ -2,7 +2,7 @@ package com.matt.payslip;
 
 import java.util.Scanner;
 
-public class UserInput {
+public class Input {
 
     public User getUserInput() {
 
@@ -12,10 +12,10 @@ public class UserInput {
         System.out.println();
 
         System.out.print("Please input your first name: ");
-        String firstName = keyboardInput.nextLine();
+        String firstName = keyboardInput.nextLine().trim();
 
         System.out.print("Please input your surname: ");
-        String surname = keyboardInput.nextLine();
+        String surname = keyboardInput.nextLine().trim();
 
         System.out.print("Please enter your annual salary: ");
         int annualSalary = keyboardInput.nextInt();
