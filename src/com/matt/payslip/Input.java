@@ -18,10 +18,20 @@ public class Input {
         String surname = keyboardInput.nextLine().trim();
 
         System.out.print("Please enter your annual salary: ");
-        int annualSalary = keyboardInput.nextInt();
+        String annualSalaryString = keyboardInput.nextLine();
+        while (!isInteger(annualSalaryString)) {
+            System.out.print("Please enter your annual salary: ");
+            annualSalaryString = keyboardInput.nextLine();
+        }
+        int annualSalary = Integer.parseInt(annualSalaryString);
 
         System.out.print("Please enter your super rate: ");
-        int superRate = keyboardInput.nextInt();
+        String superRateString = keyboardInput.nextLine();
+        while (!isInteger(superRateString)) {
+            System.out.print("Please enter your super rate: ");
+            superRateString = keyboardInput.nextLine();
+        }
+        int superRate = Integer.parseInt(superRateString);
 
         System.out.print("Please enter your payment start date: ");
         keyboardInput.nextLine();
@@ -31,6 +41,18 @@ public class Input {
         String paymentEndDate = keyboardInput.nextLine();
 
         return new User(firstName, surname, annualSalary, superRate, paymentStartDate, paymentEndDate);
+
+    }
+
+    public boolean isInteger(String input) {
+
+        try {
+            Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+
+        return true;
 
     }
 
