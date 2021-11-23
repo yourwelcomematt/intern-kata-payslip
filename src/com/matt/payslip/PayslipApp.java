@@ -44,7 +44,7 @@ public class PayslipApp {
         System.out.println();
         System.out.println("Your payslip has been generated:");
         System.out.println();
-        System.out.println("Name: " + firstName + " " + surname);
+        System.out.println("Name: " + firstName.trim() + " " + surname.trim());
         System.out.println("Pay Period: " + payPeriodString);
         System.out.println("Gross Income: " + grossIncome);
         System.out.println("Income tax: " + incomeTax);
