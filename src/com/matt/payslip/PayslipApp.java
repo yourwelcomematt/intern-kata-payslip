@@ -8,43 +8,22 @@ public class PayslipApp {
 
     public static void main(String[] args) {
 
+        UserInput userInput = new UserInput();
         PayPeriodGenerator payPeriodGenerator = new PayPeriodGenerator();
         Calculator calculator = new Calculator();
 
-        System.out.println("Welcome to the payslip generator!");
-        System.out.println();
+        User user = userInput.getUserInput();
 
-        System.out.print("Please input your first name: ");
-        String firstName = keyboardInput.nextLine();
-
-        System.out.print("Please input your surname: ");
-        String surname = keyboardInput.nextLine();
-
-        System.out.print("Please enter your annual salary: ");
-        int annualSalary = keyboardInput.nextInt();
-
-        System.out.print("Please enter your super rate: ");
-        int superRate = keyboardInput.nextInt();
-
-        System.out.print("Please enter your payment start date: ");
-        keyboardInput.nextLine();
-        String paymentStartDate = keyboardInput.nextLine();
-//        boolean validDate = payPeriodGenerator.validatePayPeriod(paymentStartDate);
-
-        System.out.print("Please enter your payment end date: ");
-        String paymentEndDate = keyboardInput.nextLine();
-//        boolean isValid= payPeriodGenerator.validatePayPeriod(paymentEndDate);
-
-        String payPeriodString = payPeriodGenerator.generatePayPeriod(paymentStartDate, paymentEndDate);
-        int grossIncome = calculator.calculateGrossIncome(annualSalary);
-        int incomeTax = calculator.calculateIncomeTax(annualSalary);
+        String payPeriodString = payPeriodGenerator.generatePayPeriod(user.getPaymentStartDate(), user.getPaymentEndDate());
+        int grossIncome = calculator.calculateGrossIncome(user.getAnnualSalary());
+        int incomeTax = calculator.calculateIncomeTax(user.getAnnualSalary());
         int netIncome = grossIncome - incomeTax;
-        int superAmount = calculator.calculateSuperAmount(grossIncome, superRate);
+        int superAmount = calculator.calculateSuperAmount(grossIncome, user.getSuperRate());
 
         System.out.println();
         System.out.println("Your payslip has been generated:");
         System.out.println();
-        System.out.println("Name: " + firstName.trim() + " " + surname.trim());
+        System.out.println("Name: " + user.getFirstName().trim() + " " + user.getSurname().trim());
         System.out.println("Pay Period: " + payPeriodString);
         System.out.println("Gross Income: " + grossIncome);
         System.out.println("Income tax: " + incomeTax);
