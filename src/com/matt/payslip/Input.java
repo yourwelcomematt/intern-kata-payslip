@@ -19,22 +19,21 @@ public class Input {
 
         System.out.print("Please enter your annual salary: ");
         String annualSalaryString = keyboardInput.nextLine();
-        while (!isInteger(annualSalaryString)) {
+        while (isNotInteger(annualSalaryString)) {
             System.out.print("Please enter your annual salary: ");
             annualSalaryString = keyboardInput.nextLine();
         }
-        int annualSalary = Integer.parseInt(annualSalaryString);
+        int annualSalary = Math.abs(Integer.parseInt(annualSalaryString));
 
         System.out.print("Please enter your super rate: ");
         String superRateString = keyboardInput.nextLine();
-        while (!isInteger(superRateString)) {
+        while (isNotInteger(superRateString)) {
             System.out.print("Please enter your super rate: ");
             superRateString = keyboardInput.nextLine();
         }
-        int superRate = Integer.parseInt(superRateString);
+        int superRate = Math.abs(Integer.parseInt(superRateString));
 
         System.out.print("Please enter your payment start date: ");
-        keyboardInput.nextLine();
         String paymentStartDate = keyboardInput.nextLine();
 
         System.out.print("Please enter your payment end date: ");
@@ -44,15 +43,15 @@ public class Input {
 
     }
 
-    public boolean isInteger(String input) {
+    public boolean isNotInteger(String input) {
 
         try {
             Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            return false;
+            return true;
         }
 
-        return true;
+        return false;
 
     }
 
